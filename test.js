@@ -29,11 +29,11 @@ const removeTask = (id) => {
     localStorage.setItem('tasksArr', JSON.stringify(arr));
 }
 
-const task = {
-    id: 1,  
-    task: 'פרודיקט תוכנה',
-}
-addTask(task);
-console.log(loadTasks());
-removeTask(1);
-console.log(loadTasks());
+// const task = {
+//     id: 1,  
+//     task: 'פרודיקט תוכנה',
+// }
+// addTask(task);
+// console.log(loadTasks());
+// removeTask(1);
+// console.log(loadTasks());
