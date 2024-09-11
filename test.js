@@ -14,17 +14,26 @@ const capitalizeFirstLetter = (str) => {
 
 // החזרת מערך המשימות מהלוקל סטורג
 const loadTasks = () => {
-    return JSON.parse(localStorage.getItem('tasks')) || [];
+    const arr = localStorage.getItem('tasksArr');
+    return arr ? JSON.parse(arr) : [];
 }
 // הוספת אובייקט משימה למערך הלוקל סטורג
 const addTask = (task) => {
-    const tasks = loadTasks();
-    tasks.push(task);
-    localStorage.setItem('tasks', JSON.stringify(arr));
+    const arr = loadTasks();
+    arr.push(task);
+    localStorage.setItem('tasksArr', JSON.stringify(arr));
 }
 // מחיקת משימה מהמערך בלוקל סטורג
 const removeTask = (id) => {
     const arr = loadTasks().filter(t => t.id != id);
-    localStorage.setItem('tasks', JSON.stringify(arr));
+    localStorage.setItem('tasksArr', JSON.stringify(arr));
 }
 
+const task = {
+    id: 1,  
+    task: 'פרודיקט תוכנה',
+}
+addTask(task);
+console.log(loadTasks());
+removeTask(1);
+console.log(loadTasks());
